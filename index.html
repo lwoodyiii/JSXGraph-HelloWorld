@@ -6,7 +6,10 @@
     <body>
         <div id="box" class="jxgbox" style="widows: 10px;00px; height:500px;"></div>
         <script type="text/javascript">
-        var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-10, 1000, 90, -100], axis:true});
+            var board = JXG.JSXGraph.initBoard('box', {boundingbox: [-10, 10, 10, -10], axis:true});
+            var mu = board.create('slider', [[2.5,1], [5,1], [0, 0.8, 1]], {name:'&mu;'});
+            f = board.create('functiongraph', [function (x) { return  mu.Value()*Math.exp(x); }]);
+            
         </script>
     </body>
 </html>
